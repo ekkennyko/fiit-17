@@ -5,6 +5,9 @@
 #include <boost/test/included/unit_test.hpp>
 
 #include "numbers.h"
+#include <iostream>
+
+using namespace std;
 
 BOOST_AUTO_TEST_SUITE( test_suite1 )
 
@@ -30,6 +33,20 @@ BOOST_AUTO_TEST_SUITE( test_suite1 )
 	BOOST_TEST(string_from_int(17) == string("seventeen"));
 	BOOST_TEST(string_from_int(18) == string("eighteen"));
 	BOOST_TEST(string_from_int(19) == string("nineteen"));
+}
+
+BOOST_AUTO_TEST_CASE( test_case2)
+{
+	for(int i = 0; i < 3; i++){
+	BOOST_TEST(number_less_100_to_string(21) == string("twenty one"));
+	//BOOST_TEST(number_less_100_to_string(36) == string("thirty six"));
+	//BOOST_TEST(number_less_100_to_string(44) == string("fourty four"));
+	}
+}
+
+BOOST_AUTO_TEST_CASE( test_case3 )
+{
+	BOOST_TEST(number_less_1000_to_string(107) == string("one hundred seven"));
 }
 BOOST_AUTO_TEST_SUITE_END()
 #endif
