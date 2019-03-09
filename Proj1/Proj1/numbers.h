@@ -243,11 +243,7 @@ string objects_less_100(int number, string s1, string s2, string s3)
 	{
 		if(number / 10 == 1)
 		{
-			rest = number % 10;
-			if(rest > 4 || rest == 0)
-				answer = number_less_100_to_string(number) + s3;
-			else
-				answer = number_less_100_to_string(number) + s3;
+			answer = number_less_100_to_string(number) + s3;
 		}
 		else
 		{
@@ -267,25 +263,45 @@ string objects_w_fraction(int integer, string i1, string i2, string i3, int frac
 {
 	string answer;
 	int rest;
-	if(integer / 10 == 0)
+	answer = objects_less_100(integer, i1, i2, i3) + ", ";
+	if(fraction / 10 == 0)
 	{
-		if(fraction / 10 == 0)
+		if (integer / 10 == 0) {
+			rest = fraction % 10;
+			if (rest == 0 || rest > 4)
+				answer = number_less_100_to_string(fraction) + f3;
+			if (rest == 1 || rest == 2)
+				answer = number_less_100_to_string(fraction) + f1;
+			if (rest == 3 || rest == 4)
+				answer = number_less_100_to_string(fraction) + f2;
+		}
+		else
 		{
 			rest = fraction % 10;
-			if(rest == 0 || rest > 4)
-				answer = number_less_100_to_string(fraction) + f3;
-			if(rest == 1 || rest == 2)
-				answer = number_less_100_to_string(fraction) + f1;
-			if(rest == 3 || rest == 4)
-				answer = number_less_100_to_string(fraction) + f2;
+			if (rest == 0 || rest > 4)
+				answer += number_less_100_to_string(fraction) + f3;
+			if (rest == 1 || rest == 2)
+				answer += number_less_100_to_string(fraction) + f1;
+			if (rest == 3 || rest == 4)
+				answer += number_less_100_to_string(fraction) + f2;
 		}
 	}
 	else
 	{
-		if(fraction / 10 == 0)
-
-		if(fraction / 10 == 1)
-			answer = objects_less_100(integer, i1, i2, i3) + ", " + number_less_100_to_string(fraction) + f3;
+		if (fraction / 10 == 1)
+		{
+			answer += number_less_100_to_string(fraction) + f3;
+		}
+		else
+		{
+			rest = fraction % 10;
+			if (rest == 0 || rest > 4)
+				answer += number_less_100_to_string(fraction) + f3;
+			if (rest == 1 || rest == 2)
+				answer += number_less_100_to_string(fraction) + f1;
+			if (rest == 3 || rest == 4)
+				answer += number_less_100_to_string(fraction) + f2;
+		}
 	}
 	return answer;
 }
