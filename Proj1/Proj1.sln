@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Proj1", "Proj1\Proj1.vcxproj", "{F1A73D8B-6A1F-47CF-AD0E-7DEF77C76652}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Zadanie2Map", "Zadanie2Map\Zadanie2Map.vcxproj", "{E287806A-A50F-4DED-8839-8257CC1B2A74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -16,6 +18,12 @@ Global
 		{F1A73D8B-6A1F-47CF-AD0E-7DEF77C76652}.Release|Win32.Build.0 = Release|Win32
 		{F1A73D8B-6A1F-47CF-AD0E-7DEF77C76652}.Test|Win32.ActiveCfg = Test|Win32
 		{F1A73D8B-6A1F-47CF-AD0E-7DEF77C76652}.Test|Win32.Build.0 = Test|Win32
+		{E287806A-A50F-4DED-8839-8257CC1B2A74}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E287806A-A50F-4DED-8839-8257CC1B2A74}.Debug|Win32.Build.0 = Debug|Win32
+		{E287806A-A50F-4DED-8839-8257CC1B2A74}.Release|Win32.ActiveCfg = Release|Win32
+		{E287806A-A50F-4DED-8839-8257CC1B2A74}.Release|Win32.Build.0 = Release|Win32
+		{E287806A-A50F-4DED-8839-8257CC1B2A74}.Test|Win32.ActiveCfg = Release|Win32
+		{E287806A-A50F-4DED-8839-8257CC1B2A74}.Test|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

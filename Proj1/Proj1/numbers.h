@@ -142,6 +142,12 @@ string number_less_1000_to_string(int number)
 {
 	int rest;
 	string answer;
+	if(number < 100)
+	{
+		answer = number_less_100_to_string(number);
+	}
+	else
+	{
 	if(number / 100 == 1)
 	{
 		rest = number % 100;
@@ -222,6 +228,7 @@ string number_less_1000_to_string(int number)
 		{
 			answer = "девятьсот " + number_less_100_to_string(rest);
 		}
+	}
 	}
 	return answer;
 }
