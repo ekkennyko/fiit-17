@@ -41,7 +41,7 @@ string string_from_int(int number)
 		answer = "десять";
 		break;
 	case 11:
-		answer = "одинадцать";
+		answer = "одиннадцать";
 		break;
 	case 12:
 		answer = "двенадцать";
@@ -270,7 +270,15 @@ string objects_w_fraction(int integer, string i1, string i2, string i3, int frac
 {
 	string answer;
 	int rest;
+	if(integer < 10){
+		answer=string_from_int(integer);
+		if(integer == 0 ||integer > 4)answer+=i3 + ", ";
+		if(integer == 1)answer+=i1 + ", ";
+		if(integer == 3 ||integer == 4)answer+=i2 + ", ";
+	}
+	else{
 	answer = objects_less_100(integer, i1, i2, i3) + ", ";
+	}
 	if(fraction / 10 == 0)
 	{
 		if (integer / 10 == 0) {
@@ -286,7 +294,7 @@ string objects_w_fraction(int integer, string i1, string i2, string i3, int frac
 		{
 			rest = fraction % 10;
 			if (rest == 0 || rest > 4)
-				answer += number_less_100_to_string(fraction) + f3;
+				answer += number_less_100_to_string(fraction) + f2;
 			if (rest == 1 || rest == 2)
 				answer += number_less_100_to_string(fraction) + f1;
 			if (rest == 3 || rest == 4)

@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE( test_suite1 )
 	BOOST_TEST(string_from_int(8) == string("восемь"));
 	BOOST_TEST(string_from_int(9) == string("девять"));
 	BOOST_TEST(string_from_int(10) == string("десять"));
-	BOOST_TEST(string_from_int(11) == string("одинадцать"));
+	BOOST_TEST(string_from_int(11) == string("одиннадцать"));
 	BOOST_TEST(string_from_int(12) == string("двенадцать"));
 	BOOST_TEST(string_from_int(13) == string("тринадцать"));
 	BOOST_TEST(string_from_int(14) == string("четырнадцать"));
@@ -57,6 +57,7 @@ BOOST_AUTO_TEST_CASE( test_case3 )
 	BOOST_TEST(number_less_1000_to_string(200) == string("двести"));
 	BOOST_TEST(number_less_1000_to_string(300) == string("триста"));
 	BOOST_TEST(number_less_1000_to_string(400) == string("четыреста"));
+	BOOST_TEST(number_less_1000_to_string(813) == string("восемьсот тринадцать"));
 	BOOST_TEST(number_less_1000_to_string(500) == string("пятьсот"));
 	BOOST_TEST(number_less_1000_to_string(600) == string("шестьсот"));
 	BOOST_TEST(number_less_1000_to_string(700) == string("семьсот"));
@@ -70,11 +71,16 @@ BOOST_AUTO_TEST_CASE( test_case4 )
 		BOOST_TEST(objects_less_100(56, " рубль", " рубля", " рублей") == string("пятьдесят шесть рублей"));
 		BOOST_TEST(objects_less_100(93, " рубль", " рубля", " рублей") == string("девяносто три рубля"));
 		BOOST_TEST(objects_less_100(31, " рубль", " рубля", " рублей") == string("тридцать один рубль"));
+		BOOST_TEST(objects_less_100(1, " рубль", " рубля", " рублей") == string("один рубль"));
 		BOOST_TEST(objects_less_100(78, " друг", " друга", " друзей") == string("семьдесят восемь друзей"));
 		BOOST_TEST(objects_less_100(83, " друг", " друга", " друзей") == string("восемьдесят три друга"));
 		BOOST_TEST(objects_less_100(21, " друг", " друга", " друзей") == string("двадцать один друг"));
 		BOOST_TEST(objects_less_100(13, " рубль", " рубля", " рублей") == string("тринадцать рублей"));
+		BOOST_TEST(objects_less_100(11, " стул", " стула", " стульев") == string("одиннадцать стульев"));
+		BOOST_TEST(objects_less_100(17, " стул", " стула", " стульев") == string("семнадцать стульев"));
 		BOOST_TEST(objects_less_100(1, " стул", " стула", " стульев") == string("один стул"));
+		BOOST_TEST(objects_less_100(3, " стул", " стула", " стульев") == string("три стула"));
+		BOOST_TEST(objects_less_100(7, " стул", " стула", " стульев") == string("семь стульев"));
 		BOOST_TEST(objects_less_100(45, " стул", " стула", " стульев") == string("сорок пять стульев"));
 		BOOST_TEST(objects_less_100(62, " стул", " стула", " стульев") == string("шестьдесят два стула"));
 }
@@ -86,6 +92,10 @@ BOOST_AUTO_TEST_CASE( test_case5 )
 		BOOST_TEST(objects_w_fraction(21, " рубль", " рубля", " рублей", 78, " копейка", " копейки", " копеек") == string("двадцать один рубль, семьдесят восемь копеек"));
 		BOOST_TEST(objects_w_fraction(13, " рубль", " рубля", " рублей", 3, " копейка", " копейки", " копеек") == string("тринадцать рублей, три копейки"));
 		BOOST_TEST(objects_w_fraction(0, " рубль", " рубля", " рублей", 3, " копейка", " копейки", " копеек") == string("три копейки"));
+		BOOST_TEST(objects_w_fraction(78, " рубль", " рубля", " рублей", 14, " копейка", " копейки", " копеек") == string("семьдесят восемь рублей, четырнадцать копеек"));
+		BOOST_TEST(objects_w_fraction(1, " рубль", " рубля", " рублей", 4, " копейка", " копейки", " копеек") == string("один рубль, четыре копейки"));
+		BOOST_TEST(objects_w_fraction(7, " рубль", " рубля", " рублей", 40, " копейка", " копейки", " копеек") == string("семь рублей, сорок копеек"));
+		BOOST_TEST(objects_w_fraction(3, " рубль", " рубля", " рублей", 85, " копейка", " копейки", " копеек") == string("три рубля, восемьдесят пять копеек"));
 }
 BOOST_AUTO_TEST_SUITE_END()
 #endif
