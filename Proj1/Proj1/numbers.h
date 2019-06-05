@@ -148,87 +148,87 @@ string number_less_1000_to_string(int number)
 	}
 	else
 	{
-	if(number / 100 == 1)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "сто";
-		else 
+		if(number / 100 == 1)
 		{
-			answer = "сто " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "сто";
+			else 
+			{
+				answer = "сто " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 2)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "двести";
-		else 
+		if(number / 100 == 2)
 		{
-			answer = "двести " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "двести";
+			else 
+			{
+				answer = "двести " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 3)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "триста";
-		else 
+		if(number / 100 == 3)
 		{
-			answer = "триста " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "триста";
+			else 
+			{
+				answer = "триста " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 4)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "четыреста";
-		else 
+		if(number / 100 == 4)
 		{
-			answer = "четыреста " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "четыреста";
+			else 
+			{
+				answer = "четыреста " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 5)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "пятьсот";
-		else 
+		if(number / 100 == 5)
 		{
-			answer = "пятьсот " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "пятьсот";
+			else 
+			{
+				answer = "пятьсот " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 6)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "шестьсот";
-		else 
+		if(number / 100 == 6)
 		{
-			answer = "шестьсот " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "шестьсот";
+			else 
+			{
+				answer = "шестьсот " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 7)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "семьсот";
-		else 
+		if(number / 100 == 7)
 		{
-			answer = "семьсот " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "семьсот";
+			else 
+			{
+				answer = "семьсот " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 8)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "восемьсот";
-		else 
+		if(number / 100 == 8)
 		{
-			answer = "восемьсот " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "восемьсот";
+			else 
+			{
+				answer = "восемьсот " + number_less_100_to_string(rest);
+			}
 		}
-	}
-	if(number / 100 == 9)
-	{
-		rest = number % 100;
-		if (rest == 0)answer = "девятьсот";
-		else 
+		if(number / 100 == 9)
 		{
-			answer = "девятьсот " + number_less_100_to_string(rest);
+			rest = number % 100;
+			if (rest == 0)answer = "девятьсот";
+			else 
+			{
+				answer = "девятьсот " + number_less_100_to_string(rest);
+			}
 		}
-	}
 	}
 	return answer;
 }
@@ -255,12 +255,12 @@ string objects_less_100(int number, string s1, string s2, string s3)
 		else
 		{
 			rest = number % 10;
-		if(rest == 1)
-			answer = number_less_100_to_string(number) + s1;
-		if(rest == 2 || rest == 3 || rest == 4)
-			answer = number_less_100_to_string(number) + s2;
-		if(rest > 4 || rest == 0)
-			answer = number_less_100_to_string(number) + s3;
+			if(rest == 1)
+				answer = number_less_100_to_string(number) + s1;
+			if(rest == 2 || rest == 3 || rest == 4)
+				answer = number_less_100_to_string(number) + s2;
+			if(rest > 4 || rest == 0)
+				answer = number_less_100_to_string(number) + s3;
 		}
 	}
 	return answer;
@@ -277,29 +277,18 @@ string objects_w_fraction(int integer, string i1, string i2, string i3, int frac
 		if(integer == 3 ||integer == 4)answer+=i2 + ", ";
 	}
 	else{
-	answer = objects_less_100(integer, i1, i2, i3) + ", ";
+		answer = objects_less_100(integer, i1, i2, i3) + ", ";
 	}
-	if(fraction / 10 == 0)
+	if(fraction < 10)
 	{
-		if (integer / 10 == 0) {
-			rest = fraction % 10;
-			if (rest == 0 || rest > 4)
-				answer = number_less_100_to_string(fraction) + f3;
-			if (rest == 1 || rest == 2)
-				answer = number_less_100_to_string(fraction) + f1;
-			if (rest == 3 || rest == 4)
-				answer = number_less_100_to_string(fraction) + f2;
-		}
+		if (fraction == 0 || fraction > 4)
+			answer += string_from_int(fraction) + f2;
 		else
-		{
-			rest = fraction % 10;
-			if (rest == 0 || rest > 4)
-				answer += number_less_100_to_string(fraction) + f2;
-			if (rest == 1 || rest == 2)
-				answer += number_less_100_to_string(fraction) + f1;
-			if (rest == 3 || rest == 4)
-				answer += number_less_100_to_string(fraction) + f2;
-		}
+			if (fraction == 1 || fraction == 2)
+				answer +=  string_from_int(fraction) + f1;
+			else
+				if (fraction == 3 || fraction == 4)
+					answer +=  string_from_int(fraction) + f2;
 	}
 	else
 	{
